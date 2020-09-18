@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Task revision="1" schemaVersion="7.3">
+	<Registration>
+	    <Name>ＸList Data'补补补Ｚ.ctk</Name>
+	    <Description>ＸThe List Data task displays the contents of a table as a report.'补补补补补补补 补Ｚ</Description>
+	    <GUID>454536B-485B-493E-B21A-EF19D7DA3E1C</GUID>
+		<Procedures>PRINT SORT</Procedures>
+		<Links>
+         <Link href="https://documentation.sas.com/?softwareId=STUDIOBASIC&amp;softwareVersion=01&amp;softwareContextId=tasks&amp;requestor=inapp">ＸSAS Studio Task Reference Guide'补补补补补补Ｚ</Link>
+         <Link href=""> </Link>
+         <Link href=""> </Link>
+		 <Link href="https://documentation.sas.com/?softwareId=MVADOC&amp;softwareVersion=01&amp;softwareContextId=proc_print&amp;requestor=inapp">ＸThe PRINT Procedure'补补补补补补Ｚ</Link>
+         <Link href=""> </Link>
+         <Link href=""> </Link>
+		 <Link href="https://documentation.sas.com/?softwareId=MVADOC&amp;softwareVersion=01&amp;softwareContextId=proc_sort&amp;requestor=inapp">ＸThe SORT Procedure'补补补补补补Ｚ</Link>
+         <Link href=""> </Link>
+         <Link href=""> </Link>         
+         <Link href="http://support.sas.com/training/studio">ＸSAS Tutorials'补补补补Ｚ</Link>
+		</Links>
+	</Registration>
+	<Metadata>
+		<DataSources>
+			<DataSource name="DATASOURCE" where="true">
+				<Roles>
+					<Role maxVars="0" minVars="0" name="VAR" order="true" type="A">ＸList variables:'补补补补Ｚ</Role>
+					<Role maxVars="0" minVars="0" name="BY" order="true" type="A">ＸGroup analysis by:'补补补补补补Ｚ</Role>
+					<Role maxVars="0" minVars="0" name="SUM" order="true" type="N">ＸTotal of:'补补补Ｚ</Role>
+					<Role maxVars="0" minVars="0" name="ID" order="true" type="A">ＸIdentifying label:'补补补补补补Ｚ</Role>
+				</Roles>
+			</DataSource>
+		</DataSources>
+
+		<Options>
+			<Option defaultValue="all" inputType="combobox" name="ROWS2LIST">ＸRows to list:'补补补补Ｚ</Option>
+			<Option inputType="string" name="all">ＸAll rows'补补补Ｚ</Option>
+			<Option inputType="string" name="firstnrows">ＸFirst n rows'补补补补Ｚ</Option>
+			<!--<Option inputType="string" name="firstnpct">First n percent of rows</Option>-->
+			<!--<Option inputType="string" name="everynrow">Every nth row</Option>-->
+				<Option decimalPlaces="0" defaultValue="10" indent="1" inputType="numstepper" maxValue="999999" minValue="1" name="NVALUE" required="true">ＸAmount (n):'补补补补Ｚ</Option>
+				<!--<Option decimalPlaces="0" defaultValue="25" indent="1" inputType="numstepper" maxValue="100" minValue="1" name="NPERCENT">Percent (n):</Option>-->
+
+			<Option inputType="string" name="DATATAB">ＸData'补补Ｚ</Option>
+			<Option inputType="string" name="DATAGROUP">ＸData'补补Ｚ</Option>
+			<Option inputType="string" name="ROLESGROUP">ＸRoles'补补Ｚ</Option>
+
+			<Option inputType="string" name="OPTIONSTAB">ＸOptions'补补Ｚ</Option>
+			<Option inputType="string" name="BASICOPTIONS">ＸBasic Options'补补补补Ｚ</Option>
+
+			<Option defaultValue="1" inputType="checkbox" name="OBS">ＸDisplay row numbers'补补补补补补Ｚ</Option>
+			<Option indent="1" inputType="inputtext" name="OBSHEADING" width="250px">ＸColumn label:'补补补补Ｚ</Option>
+
+			<Option defaultValue="1" inputType="checkbox" name="LABEL">ＸUse column labels as column headings'补补补补补补补Ｚ</Option>
+
+			<Option defaultValue="0" inputType="checkbox" name="PRINTNUMROWS">ＸDisplay number of rows'补补补补补补Ｚ</Option>
+
+			<Option defaultValue="0" inputType="checkbox" name="ROUND">ＸRound values before summing the variable'补补补补补补补 Ｚ</Option>
+
+			<Option defaultValue="default" inputType="combobox" name="HEADING">ＸHeading direction:'补补补补补补Ｚ</Option>
+			<Option inputType="string" name="default">ＸDefault'补补Ｚ</Option>
+			<Option inputType="string" name="horizontal">ＸHorizontal'补补补Ｚ</Option>
+			<Option inputType="string" name="vertical">ＸVertical'补补补Ｚ</Option>
+
+			<Option defaultValue="default" inputType="combobox" name="WIDTH">ＸColumn width:'补补补补Ｚ</Option>
+			<Option inputType="string" name="full">ＸFull'补补Ｚ</Option>
+			<Option inputType="string" name="minimum">ＸMinimum'补补Ｚ</Option>
+			<Option inputType="string" name="uniform">ＸUniform'补补Ｚ</Option>
+			<Option inputType="string" name="uniformby">ＸUniform by'补补补Ｚ</Option>
+
+			<Option defaultValue="0" inputType="checkbox" name="SPLITLABEL">ＸSplit labels'补补补补Ｚ</Option>
+			<Option defaultValue="*" indent="1" inputType="combobox" name="SPLITLABELVALUE">ＸSplit character:'补补补补补Ｚ</Option>
+         
+         <Option inputType="string" name="titleText">ＸList Data for {1}'补补补补Ｚ</Option>
+		</Options>
+	  </Metadata>
+	  <UI>
+		  <Container option="DATATAB">
+			  <Group open="true" option="DATAGROUP">
+				  <DataItem data="DATASOURCE"/>
+			  </Group>
+			  <Group open="true" option="ROLESGROUP">
+				  <RoleItem role="VAR"/>
+				  <RoleItem role="BY"/>
+				  <RoleItem role="SUM"/>
+				  <RoleItem role="ID"/>
+			  </Group>
+		  </Container>
+
+		  <Container option="OPTIONSTAB">
+
+			  <Group open="true" option="BASICOPTIONS">
+
+			  <OptionItem option="OBS"/>			
+			  <OptionItem option="OBSHEADING"/>	      
+			  <OptionItem option="LABEL"/>
+			  <OptionItem option="PRINTNUMROWS"/>
+			  <OptionItem option="ROUND"/>
+
+			  <OptionChoice option="HEADING">
+				<OptionItem option="default"/>
+				<OptionItem option="horizontal"/>
+				<OptionItem option="vertical"/>
+			  </OptionChoice>
+
+			  <OptionChoice option="WIDTH">
+				<OptionItem option="default"/>
+				<OptionItem option="full"/>
+				<OptionItem option="minimum"/>
+				<OptionItem option="uniform"/>
+				<OptionItem option="uniformby"/>
+			  </OptionChoice>
+
+			  <OptionItem option="SPLITLABEL"/>
+			  <OptionChoice option="SPLITLABELVALUE">
+				  <OptionValue>*</OptionValue>
+				  <OptionValue>!</OptionValue>
+				  <OptionValue>@</OptionValue>
+				  <OptionValue>#</OptionValue>
+				  <OptionValue>$</OptionValue>
+				  <OptionValue>%</OptionValue>
+				  <OptionValue>^</OptionValue>
+				  <OptionValue>&amp;</OptionValue>
+				  <OptionValue>+</OptionValue>
+				</OptionChoice>	      
+
+				<OptionChoice option="ROWS2LIST">
+					<OptionItem option="all"/>
+					<OptionItem option="firstnrows"/>
+			  </OptionChoice>
+			  <OptionItem option="NVALUE"/>
+
+			</Group>
+		  </Container>
+	  </UI>
+	<Dependencies>
+		<Dependency condition="$OBS=='1'">
+			<Target action="enable" conditionResult="true" option="OBSHEADING"/>
+			<Target action="disable" conditionResult="false" option="OBSHEADING"/>
+		</Dependency>
+		<Dependency condition="$SPLITLABEL=='1'">
+			<Target action="enable" conditionResult="true" option="SPLITLABELVALUE"/>
+			<Target action="disable" conditionResult="false" option="SPLITLABELVALUE"/>
+		</Dependency>
+		<Dependency condition="$ROWS2LIST.equalsIgnoreCase('firstnrows')">
+			<Target action="enable" conditionResult="true" option="NVALUE"/>
+			<Target action="disable" conditionResult="false" option="NVALUE"/>
+		</Dependency>
+	</Dependencies>
+  	<CodeTemplate>
+		<![CDATA[
+#set( $TABLE = $DATASOURCE )
+
+#set( $finalTitle = $titleText.replace("{1}", "${DATASOURCE.value}") )
+title1 $CTMUtil.quoteString($finalTitle);
+
+#if( $BY.size() > 0 )
+
+proc sort data=$DATASOURCE out=WORK.SORTTEMP;
+   #if($DATASOURCE.getWhereClause() != '') where $DATASOURCE.getWhereClause(); #end
+     by #foreach($item in $BY ) $item#end;
+run;
+#set( $TABLE = "WORK.SORTTEMP" )
+#end
+
+proc print data=$TABLE
+#if($ROWS2LIST.equalsIgnoreCase("firstnrows"))
+	(obs=$NVALUE)
+#end
+#if ($OBS == '1')
+	#if($OBSHEADING != '') obs=$CTMUtil.quoteString("$OBSHEADING") #end
+#else
+	noobs
+#end
+#if ($HEADING && ($HEADING != "default"))
+	heading=$HEADING
+#end
+#if ($LABEL == '1')
+	label
+#end
+#if ($PRINTNUMROWS == '1')
+	n
+#end
+#if ($ROUND == '1')
+	round
+#end
+#if ($DIVIDE == '0')
+	rows=page
+#end
+#if ($WIDTH && ($WIDTH != 'default'))
+	width=$WIDTH
+#end
+#if ($SPLITLABEL == '1')
+	split='$SPLITLABELVALUE'
+#end
+    ;
+#if($BY.size() == 0 && $DATASOURCE.getWhereClause() != '') where $DATASOURCE.getWhereClause(); #end
+#if( $VAR.size() > 0 )
+    var #foreach( $item in $VAR ) $item#end;
+#end
+#if( $BY.size() > 0 )
+    by #foreach( $item in $BY ) $item#end;
+#end
+#if( $SUM.size() > 0 )
+    sum #foreach( $item in $SUM ) $item#end;
+#end
+#if( $ID.size() > 0 )
+    id #foreach( $item in $ID ) $item#end;
+#end
+run;
+
+#if($BY.size() > 0)
+proc delete data=work.SORTTEMP;
+run;
+#end
+title1;
+		]]>
+	</CodeTemplate>
+<TemplateValues version="7.3">
+<![CDATA[
+{"DATASOURCE":{"librarytable":"SASHELP.AIR"},"VAR":"json:[{\"value\":\"DATE\",\"type\":\"Numeric\",\"length\":8,\"format\":\"MONYY.\",\"informat\":\"\",\"className\":\"RoleObject\"},{\"value\":\"AIR\",\"type\":\"Numeric\",\"length\":8,\"format\":\"\",\"informat\":\"\",\"className\":\"RoleObject\"}]","BY":"","SUM":"","ID":"","ROWS2LIST":[{"value":"all","displayValue":"ＸAll rows'补补补Ｚ","keys":["all",null,"ＸAll rows'补补补Ｚ"],"label":"ＸAll rows'补补补Ｚ","baseid":"{\"value\":\"all\",\"label\":\"ＸAll rows'补补补Ｚ\"}","id":"{\"value\":\"all\",\"label\":\"ＸAll rows'补补补Ｚ\"}1"}],"NVALUE":10,"OBS":"1","OBSHEADING":"这是一个新的","LABEL":"1","PRINTNUMROWS":"0","ROUND":"0","HEADING":[{"value":"default","displayValue":"ＸDefault'补补Ｚ","keys":["default",null,"ＸDefault'补补Ｚ"],"label":"ＸDefault'补补Ｚ","baseid":"{\"value\":\"default\",\"label\":\"ＸDefault'补补Ｚ\"}","id":"{\"value\":\"default\",\"label\":\"ＸDefault'补补Ｚ\"}1"}],"WIDTH":[{"value":"default","displayValue":"ＸDefault'补补Ｚ","keys":["default",null,"ＸDefault'补补Ｚ"],"label":"ＸDefault'补补Ｚ","baseid":"{\"value\":\"default\",\"label\":\"ＸDefault'补补Ｚ\"}","id":"{\"value\":\"default\",\"label\":\"ＸDefault'补补Ｚ\"}1"}],"SPLITLABEL":"0","SPLITLABELVALUE":[{"value":"*","displayValue":"*","keys":["*",null,"*"],"label":"*","baseid":"{\"value\":\"*\",\"label\":\"*\"}","id":"{\"value\":\"*\",\"label\":\"*\"}1"}]}
+]]>
+</TemplateValues>
+
+</Task>
