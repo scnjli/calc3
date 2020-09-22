@@ -1,4 +1,4 @@
-Proc print data=sashelp.cars;
+Proc print data=sashelp.car111s;
 Run;
 abc
 /this is a master program 
